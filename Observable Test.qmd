@@ -25,16 +25,6 @@ viewof selectedvar = Inputs.checkbox(["Exclusive", "Non-exclusive"], {label: "Se
 viewof range = Inputs.range([0, 5], {label: "Minimum percentage to show", step: 0.01, value: 0})
 ```
 
-```{r}
-
-library(readr)
-
-LT = read_csv("LongTableBar.csv")
-
-ojs_define(LT = LT)
-```
-
-
 
 ```{ojs}
 LT = FileAttachment("LongTableBar.csv").csv().then(data => {
@@ -88,11 +78,4 @@ Inputs.table(further_test, {
   }
 });
 
-```
-
-
-```{ojs}
-//| panel: fill
- 
-console.log(typeof further_test[0].Percentage)
 ```
